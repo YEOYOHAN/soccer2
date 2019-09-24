@@ -35,7 +35,6 @@ public class PlayerController extends HttpServlet {
 				player.setPosition(request.getParameter("position"));
 				request.setAttribute("players", PlayerServiceImpl.getInstance().findByTeamIdPosition(player));
 				break;	
-				//
 			case "find5" :
 				player = new PlayerBean();
 				player.setTeam_Id(request.getParameter("teamId"));
@@ -43,8 +42,6 @@ public class PlayerController extends HttpServlet {
 				player.setPlayer_name(request.getParameter("player_name"));
 				request.setAttribute("players", PlayerServiceImpl.getInstance().findByTeamIdHeightPlayer_Name(player));
 				break;
-				
-			case "find6": break;	
 			}
 			String page = request.getParameter("page");
 			System.out.println("페이지 : "+page);
