@@ -11,5 +11,6 @@ public interface PlayerService {
 	public List<PlayerBean> findByTeamIdPosition(PlayerBean param);
 	// 5. 5. 팀아이디 키 이름 찾기
 	public List<PlayerBean> findByTeamIdHeightPlayer_Name(PlayerBean param);
+	public List<PlayerBean> login(PlayerBean param);
 	
 }

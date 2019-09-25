@@ -28,6 +28,11 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<PlayerBean> findByTeamIdHeightPlayer_Name(PlayerBean param) {
 		return PlayerDAOImpl.getInstance().findByTeamIdHeightPlayer_Name(param);
 	}
+	@Override
+	public List<PlayerBean> login(PlayerBean param) {
+		
+		return PlayerServiceImpl.getInstance().login(param);
+	}
 
 
 
