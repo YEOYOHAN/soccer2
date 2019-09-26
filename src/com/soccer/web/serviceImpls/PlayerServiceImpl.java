@@ -15,6 +15,14 @@ public class PlayerServiceImpl implements PlayerService{
 	}
 	
 	@Override
+	public PlayerBean login(PlayerBean param) {
+		System.out.println("6. PlayerServiceImpl 의 login()으로 이동");
+		System.out.println(String.format("param 값 출력 : %s, %s",
+				param.getPlayer_Id(),
+				param.getSolar()));
+		return  PlayerDAOImpl.getInstance().selectByPlayerIdSolar(param);
+	}
+	@Override
 	public List<String> findPositions() {
 		return PlayerDAOImpl.getInstance().selectPositions();
 	}
@@ -28,12 +36,6 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<PlayerBean> findByTeamIdHeightPlayer_Name(PlayerBean param) {
 		return PlayerDAOImpl.getInstance().findByTeamIdHeightPlayer_Name(param);
 	}
-	@Override
-	public List<PlayerBean> login(PlayerBean param) {
-		
-		return PlayerServiceImpl.getInstance().login(param);
-	}
-
 
 
 }

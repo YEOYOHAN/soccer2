@@ -13,10 +13,10 @@
 		<table border="1" style="width:500px;height:200px; margin: 100px auto">
 		<tr>
 			<td style="width: 300px">
-			USERID <input type="text" name="player_Id" style="width: 100%"/>
+			USERID <input type="text" name="playerId" style="width: 100%"/>
 			</td>
 			<td rowspan="2">
-			<input type="hidden" name="action" value="move"/>
+			<input type="hidden" name="action" value="login"/>
 			<input type="hidden" name="page" value="home"/>
 			<input type="submit" value="로그인"/>
 			</td>

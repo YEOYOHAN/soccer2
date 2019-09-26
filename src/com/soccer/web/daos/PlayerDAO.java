@@ -11,4 +11,8 @@ public interface PlayerDAO {
 	public List<PlayerBean> findByTeamIdPosition(PlayerBean param);
 
 	public List<PlayerBean> findByTeamIdHeightPlayer_Name(PlayerBean param);
+	
+	public PlayerBean selectByPlayerIdSolar(PlayerBean param);
+	
+	public List<PlayerBean> selectMany(PlayerBean param);
 }
