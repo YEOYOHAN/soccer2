@@ -10,7 +10,7 @@
 <body>
 <h2><a id="btn2" href="#">2. 포지션 종류 보기</a></h2>
 <h2>4. 포지션 찾기</h2>
-<form id="btn4" action="<%=request.getContextPath()%>/player.do">
+<form id="btn4" action="${ctx}/player.do">
 	팀ID <input type="text" name="teamId"/><br />
 	포지션 <input type="text" name="position"/><br />
 	<input type="hidden" name="action" value="find4"/>
@@ -19,7 +19,7 @@
 </form>
 <!-- 4. 팀아이디로 해당팀의 포지션별 선수 검색기능 예 -->
 <h2>5. 팀아이디 키 이름 찾기</h2>
-<form id="btn5" action="<%=request.getContextPath()%>/player.do">
+<form id="btn5" action="${ctx}/player.do">
 	팀ID<input type="text" name="teamId"/><br />
 	키<input type="text" name="height"/><br />
 	이름<input type="text" name="player_name"/><br />
