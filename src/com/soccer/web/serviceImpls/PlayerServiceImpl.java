@@ -18,7 +18,7 @@ public class PlayerServiceImpl implements PlayerService{
 	public PlayerBean login(PlayerBean param) {
 		System.out.println("6. PlayerServiceImpl 의 login()으로 이동");
 		System.out.println(String.format("param 값 출력 : %s, %s",
-				param.getPlayer_Id(),
+				param.getPlayerId(),
 				param.getSolar()));
 		return  PlayerDAOImpl.getInstance().selectByPlayerIdSolar(param);
 	}

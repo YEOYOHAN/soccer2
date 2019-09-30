@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>관리자페이지</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-<body>
+<jsp:include page="../common/head.jsp"/>
 <h2><a id="btn2" href="#">2. 포지션 종류 보기</a></h2>
 <h2>4. 포지션 찾기</h2>
 <form id="btn4" action="${ctx}/player.do">
@@ -39,5 +32,4 @@ $('#btn5').submit(function() {
 	alert('이동')
 })
 </script>
-</body>
-</html>
+<jsp:include page="../common/foot.jsp"/>

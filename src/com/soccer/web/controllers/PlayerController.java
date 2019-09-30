@@ -23,6 +23,7 @@ public class PlayerController extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("1. jsp에서 들어옴");
+		System.out.println("ddd"+request.getServletPath()+request.getContextPath());
 		System.out.println(String.format("request 값 출력: %s, %s, %s, %s", 
 				request.getParameter("playerId"),
 				request.getParameter("solar"),

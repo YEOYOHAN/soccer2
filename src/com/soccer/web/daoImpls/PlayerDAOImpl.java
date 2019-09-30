@@ -28,25 +28,24 @@ public class PlayerDAOImpl implements PlayerDAO{
 					.createDatabase(Constants.VENDOR)
 					.getcConnection()
 					.prepareStatement(sql);
-			stmt.setString(1, param.getPlayer_Id());
+			stmt.setString(1, param.getPlayerId());
 			stmt.setString(2, param.getSolar());
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
 				player = new PlayerBean();
-				player.setBack_No(rs.getString("BACK_NO"));
-				player.setBirth_Date(rs.getString("BIRTH_DATE"));
-				player.setPlayer_name(rs.getString("PLAYER_NAME"));
+				player.setBackNo(rs.getString("BACK_NO"));
+				player.setBirthDate(rs.getString("BIRTH_DATE"));
+				player.setEPlayerName(rs.getString("E_PLAYER_NAME"));
 				player.setHeight(rs.getString("HEIGHT"));
-				player.setJoin_Yyyy(rs.getString("JOIN_YYYY"));
+				player.setJoinYyyy(rs.getString("JOIN_YYYY"));
 				player.setNation(rs.getString("NATION"));
 				player.setNickname(rs.getString("NICKNAME"));
-				player.setPlayer_Id(rs.getString("PLAYER_ID"));
-				player.setE_Player_Name(rs.getString("E_PLAYER_NAME"));
+				player.setPlayerId(rs.getString("PLAYER_ID"));
+				player.setPlayerName(rs.getString("PLAYER_NAME"));
 				player.setPosition(rs.getString("POSITION"));
 				player.setSolar(rs.getString("SOLAR"));
-				player.setTeam_Id(rs.getString("TEAM_ID"));
+				player.setTeamId(rs.getString("TEAM_ID"));
 				player.setWeight(rs.getString("WEIGHT"));
-				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

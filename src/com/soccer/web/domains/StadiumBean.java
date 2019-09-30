@@ -8,5 +8,5 @@ import lombok.Data;
 public class StadiumBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-	private String Stadium_Id, hometeam_Id, set_Count, address, ddd, tel, stadium_Name;
+	private String stadiumId, hometeamId, setCount, address, ddd, tel, stadiumName;
 }
