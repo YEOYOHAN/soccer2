@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:include page="../common/head.jsp"/>
 
 <div></div>
 <div></div>
@@ -10,31 +9,46 @@
 <form id="join_form">
 	<div id="join_tab">
 		<div class="join_tab_iteam">
-		TeamId <input class="join_input_text" type="text" name="teamId"/><br />
-		PlayerId <input class="join_input_text" type="text" name="playerId"/><br />
-		EngPlayerName <input class="join_input_text" type="text" name="e_PlayerName"/><br />
-		JoinYear <input class="join_input_text" type="text" name="joinYyyy"/><br />
-		Position <input class="join_input_text" type="text" name="position"/><br />
-		BackNo <input class="join_input_text" type="text" name="backNo"/><br />
-		Nation <input class="join_input_text" type="text" name="nation"/><br />
-		BirthDate <input class="join_input_text" type="text" name="birthDate"/><br />
-		Solar <input class="join_input_text" type="text" name="solar"/><br />
-		Height <input class="join_input_text" type="text" name="height"/><br />
-		Weight <input class="join_input_text" type="text" name="weight"/>
+  <div>playerId</div>
+        <div class = "input_join"><input id="join_playerId"type="text" name = "playerId" /></div>
+        <div>playerName</div>
+        <div class = "input_join"><input type="text" name = "playerName"/></div>
+        <div>teamId</div>
+        <div class = "input_join"><input type="text" name = "teamId" /></div>
+        <div>ePlayerName</div>
+        <div class = "input_join"><input type="text" name = "ePlayerName" /></div>
+        <div>nickName</div>
+        <div class = "input_join"><input type="text" name = "nickName" /></div>
+        <div>joinYyyy</div>
+        <div class = "input_join"><input type="text" name = "joinYyyy" /></div>
+        <div>position</div>
+        <div class = "input_join"><input type="text" name = "position" /></div>
+        <div>backNo</div>
+        <div class = "input_join"><input type="text" name = "backNo" /></div>
+        <div>nation</div>
+        <div class = "input_join"><input type="text" name = "nation" /></div>
+        <div>birthDate</div>
+        <div class = "input_join"><input type="text" name = "birthDate" /></div>
+        <div>solar</div>
+        <div class = "input_join"><input id="join_solar" type="text" name = "solar" /></div>
+        <div>height</div>
+        <div class = "input_join"><input type="text" name = "height" /></div>
+        <div>weight</div>
+        <div class = "input_join"><input type="text" name = "weight" /></div>
 		</div>
 	</div>
+	<div><h3>
+	<input id="join_btn" type="button" value="가입하자"/>
+	<input type="hidden" name="action" value="create"/>
+	<input type="hidden" name="page" value="login"/>
+	</h3></div>
 </form>
 </div>
 <div></div>
 <div></div>
 <div>
-<h3 id="join_submit">
-<a href="">가입완료</a>
-<a id="back_page" href="#">뒤로가기</a>
-</h3>
 </div>
 <div></div>
 <script>
 app.init('${ctx}');
 </script>
-<jsp:include page="../common/foot.jsp"/>

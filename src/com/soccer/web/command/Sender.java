@@ -13,7 +13,6 @@ public class Sender {
 					request.getParameter("solar"),
 					request.getParameter("action"),
 					request.getParameter("page")));
-			System.out.println("도착지 :: "+Receiver.cmd.getView());
 			request.getRequestDispatcher(Receiver.cmd.getView())
 			.forward(request, response);
 		} catch (Exception e) {

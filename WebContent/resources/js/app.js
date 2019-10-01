@@ -1,15 +1,9 @@
 var app = (()=>{
 	return {
 		init : (ctx)=>{
-			playerService.login();
-			$('#a_join').click(()=>{
-				alert('회원가입 이동');
-				location.assign(ctx+'/player.do?action=move&page=join');
-			});
-			$('#back_page').click(()=>{
-				alert('뒤로가 임마');
-				location.assign(ctx+'/player.do?action=move&page=login');
-			});
+			playerService.login(ctx);
+			playerService.join(ctx);
+			playerService.move_join(ctx);
 		}
 	};
 })();
@@ -28,7 +22,7 @@ var player = (()=>{
 })();
 var playerService = (()=>{
 	return {
-		login: ()=>{
+		login: (ctx)=>{
 			$('#login_btn').click(()=>{
 				if($('#username').val()===''||
 						$('#solar').val()===''){
@@ -36,9 +30,28 @@ var playerService = (()=>{
 				}else{
 					alert('입력한 아이디값: '+$('#username').val()
 							+'입력한 비번값: '+$('#solar').val());
-					$('#login_form').attr('action', '/jee-soccer/player.do');
+					$('#login_form').attr('action', ctx+'/player.do');
 					$('#login_form').submit();
 				}
+			});
+		},
+		join: (ctx)=>{
+			$('#join_btn').click(()=>{
+				if($('#join_playerId').val()===''||
+						$('#join_solar').val()===''){
+					alert('필수값이 업습니당!!');
+				}else{
+					alert('입력한 아이디값: '+$('#join_playerId').val()
+							+'입력한 비번값: '+$('#join_solar').val());
+					$('#join_form').attr('action', ctx+'/player.do');
+					$('#join_form').submit();
+				}
+			});
+		},
+		move_join: (ctx)=>{
+			$('#a_join').click(()=>{
+				alert('회원가입 이동');
+				location.assign(ctx+'/facade.do?action=move&page=join');
 			});
 		}
 	};

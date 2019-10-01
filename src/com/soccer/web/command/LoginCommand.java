@@ -26,7 +26,6 @@ public class LoginCommand extends Command{
 		player.setPlayerId(playerId);
 		player.setSolar(solar);
 		player = PlayerServiceImpl.getInstance().login(player);
-		//System.out.println("10. DB에서 커맨더로 전달된 로그인 객체"+player.toString());
 		setPage((player!=null)? request.getParameter("page"):"login");
 		super.execute();
 	}

@@ -91,4 +91,23 @@ public class PlayerDAOImpl implements PlayerDAO{
 		List<PlayerBean> list3 = new ArrayList<>();
 		return list3;
 	}
+	@Override
+	public boolean insertPlayer(PlayerBean param) {
+		boolean flag = false;
+		try {
+			String sql = "INSERT INTO PLAYER(PLAYER_ID, SOLAR, TEAM_ID, PLAYER_NAME)\n" + 
+					"VALUES(?,?, 'K03','여요한')";
+			PreparedStatement stmt = DatabaseFactory
+					.createDatabase(Constants.VENDOR)
+					.getcConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, param.getPlayerId());
+			stmt.setString(2, param.getSolar());
+			int rs = stmt.executeUpdate();
+			flag = (rs == 1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
 }

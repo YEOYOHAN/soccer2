@@ -11,14 +11,18 @@ public class Commander {
 				request.getParameter("solar"),
 				request.getParameter("action"),
 				request.getParameter("page")));
-		Command o = null;
+		Command cmd = null;
 		switch(Action.valueOf(request.getParameter("action").toUpperCase())) {
-		case MOVE : o = new MoveCommand(request); break;
-		case LOGIN : o = new LoginCommand(request); break;
+		case CREATE : cmd = new CreateCommand(request); break;
+		case SEARCH : break;
+		case UPDATE : break;
+		case DELETE : break;
+		case MOVE : cmd = new MoveCommand(request); break;
+		case LOGIN : cmd = new LoginCommand(request); break;
 		default :
 			break;
 		}
-		return o;
+		return cmd;
 		
 	}
 

@@ -18,6 +18,7 @@ public class FacadeController extends HttpServlet {
 	enum Resources{
 		CTX,CSS,JS,IMG
 	}
+	@SuppressWarnings("unused")
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("퍼사드로 들어옴");
 		for(Resources r : Resources.values()) {
@@ -28,9 +29,14 @@ public class FacadeController extends HttpServlet {
 							:request.getContextPath()
 							+"/resources/"+r.toString().toLowerCase());
 		}
+		if(request.getParameter("page") == null) {
+			request.setAttribute("page", "login");
+		}else {
+			request.setAttribute("page", request.getParameter("page"));
+		}
 		request
 		.getRequestDispatcher(String.format(Constants.DU_PATH, request.getServletPath()
-				.substring(1, request.getServletPath().indexOf(".")),"login"))
+				.substring(1, request.getServletPath().indexOf(".")),"main"))
 		.forward(request, response);
 	}
 }

@@ -13,6 +13,10 @@ public class PlayerServiceImpl implements PlayerService{
 	}
 	private PlayerServiceImpl() {
 	}
+	@Override
+	public boolean join(PlayerBean param) {
+		return PlayerDAOImpl.getInstance().insertPlayer(param);
+	}
 	
 	@Override
 	public PlayerBean login(PlayerBean param) {
@@ -36,6 +40,7 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<PlayerBean> findByTeamIdHeightPlayer_Name(PlayerBean param) {
 		return PlayerDAOImpl.getInstance().findByTeamIdHeightPlayer_Name(param);
 	}
+
 
 
 }
